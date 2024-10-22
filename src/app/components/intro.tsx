@@ -11,12 +11,18 @@ import { Mail } from 'lucide-react'
 //Animations
 import { Fade } from 'react-awesome-reveal'
 import { motion } from 'framer-motion'
+import { useSectionInView } from '@/lib/useInView'
+import { useActiveSectionContext } from '@/containers/active-section'
 
 export default function Intro() {
+
+    const { ref } = useSectionInView("#home", 0.5);
+    // const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
     return (
         <section
+            ref={ref}
             id='home'
-            className='mb-28 max-w-[75rem] text-center sm:mb-0 lg:-mt-20 -mt-10'
+            className='mb-28 max-w-[75rem] text-center sm:mb-0 '
         >
             <div className='flex items-center justify-center'>
                 <div className='relative'>
