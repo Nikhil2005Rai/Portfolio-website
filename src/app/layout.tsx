@@ -5,6 +5,7 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "./components/navbar";
+import ThemeSwitch from "./components/theme-controller";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <ThemeSwitch />
         </Providers>
       </body>
     </html>

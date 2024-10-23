@@ -34,7 +34,12 @@ export default function Header({ links }: HeaderProps) {
                                         activeSection === link.hash,
                                 }
                                 )}
-                                href={link.hash}>
+                                href={link.hash}
+                                onClick={() => {
+                                    setActiveSection(link.hash);
+                                    setTimeOfLastClick(Date.now());
+                                }}
+                                >
                                 {link.nameEng}
                                 {link.hash === activeSection && (
                                     <motion.span
