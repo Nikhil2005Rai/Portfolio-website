@@ -90,11 +90,11 @@ export default function Intro() {
                     Connect <Mail color={"#9ca3af"} />
                 </Link>
 
-                <a className="bg-gray-900 p-4 text-white flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60" href="#" target='blank'>
+                <a className="bg-gray-900 p-4 text-white flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60" href="https://www.linkedin.com/in/nikhil-rai-936a48205/" target='blank'>
                     <BsLinkedin />
                 </a>
 
-                <a className="bg-gray-900 p-4 text-white flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60" href="#" target='blank'>
+                <a className="bg-gray-900 p-4 text-white flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60" href="https://github.com/Nikhil2005Rai" target='blank'>
                     <FaGithubSquare />
                 </a>
             </motion.div>
