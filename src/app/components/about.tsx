@@ -37,7 +37,7 @@ const About = () => {
                 </Fade>
                 <Fade direction='up' delay={600} cascade damping={1e-1} triggerOnce={true}>
                   <p className='mt-2 leading-relaxed text-sm text-gray-700 dark:text-white/70'>
-                    Hey there! I&apos;m Nikhil Rai, a dedicated full-stack developer with a love for creating seamless and interactive web experiences. From designing intuitive front-end interfaces to building robust back-end systems, I enjoy every step of the development process. When I&apos;m not coding, you&apos;ll find me exploring new tech, playing games, or brainstorming new project ideas. Let's build something amazing together! 🚀
+                    Hey there! I&apos;m Nikhil Rai, a dedicated full-stack developer with a love for creating seamless and interactive web experiences. From designing intuitive front-end interfaces to building robust back-end systems, I enjoy every step of the development process. When I&apos;m not coding, you&apos;ll find me exploring new tech, playing games, or brainstorming new project ideas. Let&apos;s build something amazing together! 🚀
                   </p>
                 </Fade>
                 
