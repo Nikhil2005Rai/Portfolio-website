@@ -63,7 +63,7 @@ export default function Intro() {
 
             <Fade direction='up' delay={400} cascade damping={1e-1} triggerOnce={true}>
                 <h1 className='mb-10 mt-4 text-2xl sm:text-4xl'>
-                    <span className='font-medium !leading-[1.5]'>Hi, I'm Nikhil Rai. A Fullstack Web Developer based in India.</span>{" "}
+                    <span className='font-medium !leading-[1.5]'>Hi, I&apos;m Nikhil Rai. A Fullstack Web Developer based in India.</span>{" "}
                     <p className='text-[14px]'>
                         A full-stack developer skilled in building dynamic, user-friendly web applications. I love turning ideas into reality with clean, efficient code.
                     </p>
