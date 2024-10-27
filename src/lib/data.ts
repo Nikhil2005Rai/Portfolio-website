@@ -53,3 +53,21 @@ export const projectsData: ProjectInfo[] = [
         link: "https://google.com",
     },
 ]
+
+export const skillsData =[
+"HTML",
+"CSS",
+"JavaScript",
+"TypeScript",
+"React",
+"Next.js",
+"Node.js",
+"Postman",
+"Git",
+"GitHub",
+"Tailwind",
+"MongoDB",
+"Redux Toolkit",
+"Express",
+"Drizzle",
+]
