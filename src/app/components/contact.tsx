@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/useInView";
@@ -9,6 +9,39 @@ import { Fade } from "react-awesome-reveal";
 
 export default function Contact() {
     const { ref } = useSectionInView("#contact")
+    const [senderEmail, setSenderEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [status, setStatus] = useState('');
+    const [pending, setPending] = useState(false);
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        setStatus('Sending...');
+        setPending(true);
+
+        try {
+            const response = await fetch('./../api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: senderEmail, content: message }),
+            });
+
+            if (response.ok) {
+                setStatus('Email sent successfully!');
+                setSenderEmail('');
+                setMessage('');
+            } else {
+                setStatus('Failed to send email.');
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            setStatus('An error occurred.');
+        }
+        setPending(false);
+    };
+
     return (
         <motion.section id="contact" ref={ref} className="mb-20">
             <Fade direction="up" delay={400} cascade damping={1e-1} triggerOnce={true}>
@@ -24,7 +57,7 @@ export default function Contact() {
             </Fade>
 
             <Fade direction="up" delay={800} cascade damping={1e-1} triggerOnce={true}>
-                <form className="mt-10 flex flex-col dark:text-black">
+                <form className="mt-10 flex flex-col dark:text-black" onSubmit={handleSubmit}>
                     <input
                         className="h-14 px-4 rounded-lg dark:bg-white/[0.07] dark:text-white"
                         type="email"
@@ -32,6 +65,8 @@ export default function Contact() {
                         required
                         maxLength={50}
                         placeholder="Your Email"
+                        value={senderEmail}
+                        onChange={(e) => setSenderEmail(e.target.value)}
                     />
                     <textarea
                         className="h-28 px-4 py-2 rounded-lg dark:bg-white/[0.07] mt-4 dark:text-white"
@@ -39,8 +74,10 @@ export default function Contact() {
                         required
                         maxLength={5000}
                         placeholder="Please type here"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
-                    <SubmitBtn text={"Submit"} className="mt-4" />
+                    <SubmitBtn text={"Submit"} className="mt-4" pending={pending} />
                 </form>
 
             </Fade>
