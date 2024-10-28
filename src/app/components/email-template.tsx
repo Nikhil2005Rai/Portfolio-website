@@ -52,7 +52,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             fontSize: '14px',
             color: '#888'
         }}>
-            <p>Received via <a href="https://your-portfolio-link.com" style={{ color: '#4a90e2', textDecoration: 'none' }}>My Portfolio</a></p>
+            <p>Received via <a href="https://portfolio-website-wine-one.vercel.app/" style={{ color: '#4a90e2', textDecoration: 'none' }}>My Portfolio</a></p>
         </footer>
     </div>
 );
