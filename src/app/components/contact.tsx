@@ -17,12 +17,12 @@ export default function Contact() {
 
 
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setPending(true);
 
         try {
-            const response = await fetch('./../api/send', {
+            const response = await fetch('/api/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
