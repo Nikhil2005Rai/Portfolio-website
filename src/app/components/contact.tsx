@@ -6,17 +6,19 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/useInView";
 import SubmitBtn from "./submit-btn";
 import { Fade } from "react-awesome-reveal";
+import toast from "react-hot-toast";
+
 
 export default function Contact() {
     const { ref } = useSectionInView("#contact")
     const [senderEmail, setSenderEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [status, setStatus] = useState('');
     const [pending, setPending] = useState(false);
+
+
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        setStatus('Sending...');
         setPending(true);
 
         try {
@@ -29,15 +31,15 @@ export default function Contact() {
             });
 
             if (response.ok) {
-                setStatus('Email sent successfully!');
+                toast.success('Email sent successfully!');
                 setSenderEmail('');
                 setMessage('');
             } else {
-                setStatus('Failed to send email.');
+                toast.error('Failed to send email.');
             }
         } catch (error) {
             console.error('Error sending email:', error);
-            setStatus('An error occurred.');
+            toast.error('An error occurred.');
         }
         setPending(false);
     };

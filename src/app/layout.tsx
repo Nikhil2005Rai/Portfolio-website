@@ -6,6 +6,8 @@ import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "./components/navbar";
 import ThemeSwitch from "./components/theme-controller";
+import { Toaster } from 'react-hot-toast';
+
 
 const sora = Sora({
   subsets: ["latin"],
@@ -37,6 +39,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <ThemeSwitch />
+          <Toaster />
         </Providers>
       </body>
     </html>
